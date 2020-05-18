@@ -1,11 +1,9 @@
 import React from 'react';
+import { Typography } from 'antd';
+const { Paragraph } = Typography;
 
 const App = () => {
-  return (
-    <div>
-      <div>Hello World</div>
-    </div>
-  );
+  return <div>lorem29</div>;
 };
 
 export default App;
