@@ -1,0 +1,34 @@
+.navbar-container {
+  border-bottom: solid 01px #f4f4f4;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar-title {
+  font-size: 1.6rem;
+  margin-right: -2rem;
+  padding: 1rem;
+}
+
+.drawer-title {
+  font-size: 1.4rem;
+}
+
+.navbar-menu {
+  text-align: right;
+  margin-right: 2rem;
+  font-size: 1.1rem;
+  color: black;
+  background-color: transparent;
+  border: none;
+}
+
+.navbar-menu:hover {
+  cursor: pointer;
+}
+
+.navbar-menu:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(37, 167, 207, 0.4);
+}
