@@ -6,6 +6,7 @@ const dbConnect = require('./config/dbConnect');
 
 // Imports Routes
 const authRoute = require('./routes/auth');
+const contactRoute = require('./routes/contact');
 
 // Initialize Express
 const app = express();
@@ -27,6 +28,7 @@ app.use(express.json());
 
 // Routes middleware
 app.use('/api', authRoute);
+app.use('/api', contactRoute);
 
 // Setting up port
 const PORT = process.env.PORT || 5000;

@@ -3,6 +3,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 import Home from './components/pages/Home/Home';
 import Explore from './components/pages/Explore/Explore';
+import Contact from './components/pages/Contact/Contact';
 
 // Authentication Routes
 import Signup from './components/auth/Signup';
@@ -17,6 +18,7 @@ const App = () => {
       <Switch>
         <Route exact path='/' component={Home} />
         <Route exact path='/explore' component={Explore} />
+        <Route exact path='/contact' component={Contact} />
 
         {/* Authentication Routes */}
         <Route exact path='/sign-up' component={Signup} />

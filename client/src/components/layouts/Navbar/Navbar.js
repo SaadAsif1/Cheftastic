@@ -1,33 +1,40 @@
 import React, { useState } from 'react';
 import { Link, withRouter } from 'react-router-dom';
-import { Drawer, Button } from 'antd';
+import { Drawer, Button, Menu, Dropdown } from 'antd';
 import {
   YuqueFilled,
   MenuOutlined,
   ArrowLeftOutlined,
   LogoutOutlined,
   UserOutlined,
+  DownOutlined,
 } from '@ant-design/icons';
 import { isAuth, signout, getLocalStorage } from '../../../helpers/auth';
 import './Navbar.css';
 
 const Navbar = ({ showArrow, arrowLink, history }) => {
-  const [visible, setVisible] = useState(false);
+  // const [visible, setVisible] = useState(false);
 
-  const showDrawer = () => {
-    setVisible(true);
-  };
+  // const showDrawer = () => {
+  //   setVisible(true);
+  // };
 
-  const onClose = () => {
-    setVisible(false);
+  // const onClose = () => {
+  //   setVisible(false);
+  // };
+
+  const navbarCurrent = (path) => {
+    if (history.location.pathname === path) {
+      return { background: 'lightgrey' };
+    }
   };
 
   // Shows arrow
   const arrow = () => {
     if (showArrow) {
-      return { display: 'block' };
+      return { title: { marginRight: '-1.5rem' }, arrow: { display: 'block' } };
     } else {
-      return { display: 'none' };
+      return { title: { marginRight: '-3rem' }, arrow: { display: 'none' } };
     }
   };
 
@@ -35,17 +42,80 @@ const Navbar = ({ showArrow, arrowLink, history }) => {
     <div className='navbar-main-container'>
       <div className='navbar-container'>
         <div>
-          <Link to={arrowLink} style={arrow()} className='nav-arrow'>
+          <Link to={arrowLink} style={arrow().arrow} className='nav-arrow'>
             <ArrowLeftOutlined />
           </Link>
         </div>
-        <Link to='/' className='align-center title-font navbar-title'>
+        <Link
+          to='/'
+          style={arrow().title}
+          className='align-center title-font navbar-title'
+        >
           <YuqueFilled /> Reminders
         </Link>
-        <button className='navbar-menu' onClick={showDrawer}>
-          <MenuOutlined />
-        </button>
-        <Drawer
+        {isAuth() ? (
+          <Button
+            type='primary'
+            danger
+            icon={<LogoutOutlined />}
+            onClick={() => {
+              signout(() => {
+                history.push('/');
+              });
+            }}
+          >
+            Sign Out
+          </Button>
+        ) : (
+          <div>
+            <Dropdown
+              overlay={
+                <Menu>
+                  <Menu.Item style={navbarCurrent('/explore')}>
+                    <Link to='/explore'>Explore</Link>
+                  </Menu.Item>
+                  <Menu.Divider />
+                  <Menu.Item style={navbarCurrent('/contact')}>
+                    <Link to='/contact'>Contact</Link>
+                  </Menu.Item>
+                  <Menu.Divider />
+                  <Menu.Item style={navbarCurrent('/sign-up')}>
+                    <Link to='/sign-up'>Sign Up</Link>
+                  </Menu.Item>
+                  <Menu.Divider />
+                  <Menu.Item style={navbarCurrent('/sign-in')}>
+                    <Link to='/sign-in'>Sign In</Link>
+                  </Menu.Item>
+                </Menu>
+              }
+              trigger={['click']}
+            >
+              <Button
+                type='primary'
+                style={{ background: 'rgb(83, 64, 255)', border: 'none' }}
+                danger
+                onClick={(e) => e.preventDefault()}
+              >
+                <MenuOutlined />
+              </Button>
+            </Dropdown>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+};
+
+export default withRouter(Navbar);
+
+/* <Link className='nav-links-1' to='/sign-in'>
+              Sign In
+            </Link>
+            <Link className='nav-links-2' to='/sign-up'>
+              Sign Up
+            </Link> */
+
+/* <Drawer
           title={
             <div className='align-center  letter-spacing-1 drawer-title'>
               <b>
@@ -57,7 +127,7 @@ const Navbar = ({ showArrow, arrowLink, history }) => {
           closable={false}
           onClose={onClose}
           visible={visible}
-          width={200}
+          width={300}
         >
           <div className='align-center'>
             {isAuth() ? (
@@ -90,10 +160,4 @@ const Navbar = ({ showArrow, arrowLink, history }) => {
               </div>
             )}
           </div>
-        </Drawer>
-      </div>
-    </div>
-  );
-};
-
-export default withRouter(Navbar);
+        </Drawer> */

@@ -1,0 +1,23 @@
+.contact-container {
+  width: 50%;
+  margin: 0 auto;
+  margin-top: 5rem;
+}
+
+.contact-container-title {
+  text-align: center;
+}
+
+.contact-container-title p {
+  width: 70%;
+  margin: 0.2rem auto;
+  color: rgb(133, 133, 133);
+  font-weight: 600;
+}
+
+.contact-container h2 {
+  display: inline-block;
+  border-bottom: solid 3px rgb(83, 64, 255);
+  font-size: 1.7rem;
+  font-weight: 900;
+}

@@ -104,7 +104,10 @@ const ResetPassword = ({ match }) => {
         <button
           disabled={buttonText === 'Submitting...' ? true : false}
           className='main-btn'
-          style={{ padding: '0.2rem 1rem' }}
+          style={{
+            borderRadius: '0',
+            padding: '0.3rem 2rem',
+          }}
         >
           {buttonText}
         </button>
@@ -115,7 +118,7 @@ const ResetPassword = ({ match }) => {
   // Form Styles
   const resetStyles = {
     margin: '5rem auto',
-    width: '70%',
+    width: '50%',
     height: '50%',
     padding: '2rem',
     backgroundColor: '#ffff',
