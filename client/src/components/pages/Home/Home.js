@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { setLocalStorage } from '../../../helpers/auth';
+import { Link, Redirect } from 'react-router-dom';
+import { setLocalStorage, isAuth } from '../../../helpers/auth';
 import Navbar from '../../layouts/Navbar/Navbar';
+import Research from '../../../assets/view.png';
+import Book from '../../../assets/book.png';
+import Bulb from '../../../assets/bulb.png';
 import './Home.css';
 
 const Home = () => {
@@ -19,6 +22,7 @@ const Home = () => {
 
   return (
     <div>
+      {isAuth() && <Redirect to='/explore' />}
       <Navbar showArrow={false} arrowLink='/' />
       <div className='container align-center'>
         <div className='home-container'>
@@ -35,6 +39,29 @@ const Home = () => {
               placeholder='Full Name'
             />
           </div>
+        </div>
+      </div>
+      <div className='home-img-container'>
+        <div className='home-img-paragraph'>
+          <img className='home-img' src={Research} alt='img1' />
+          <h2>Your Research</h2>
+          <p>You words can have a big effect others. Make sure to DO YOUR RESEARCH!</p>
+        </div>
+        <div className='home-img-paragraph'>
+          <img className='home-img' src={Book} alt='img2' />
+          <h2>Factual Writing</h2>
+          <p>
+            Your writing should be concerned with actual details or information rather
+            than ideas or feelings about it.
+          </p>
+        </div>
+        <div className='home-img-paragraph'>
+          <img className='home-img' src={Bulb} alt='img2' />
+          <h2>World Impact</h2>
+          <p>
+            Your writing will be impacting many in the world make sure your considerate
+            and done your research.
+          </p>
         </div>
       </div>
       <div className='home-footer'>

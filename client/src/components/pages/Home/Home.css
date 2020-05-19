@@ -34,7 +34,7 @@
   font-weight: 400;
   width: 100%;
   padding: 0.8rem 2rem;
-  border: solid 2px rgb(218, 226, 242);
+  border: solid 1px rgb(218, 226, 242);
   margin: 8px 0px 15px;
   border-radius: 10px;
   outline: none;
@@ -59,6 +59,34 @@
 
 .home-input:focus::placeholder {
   color: transparent;
+}
+
+/* Home Image Conteiner */
+.home-img-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-top: 5rem;
+}
+
+.home-img-paragraph {
+  width: 15rem;
+  text-align: center;
+}
+
+.home-img-paragraph h2 {
+  margin-top: 0.7rem;
+  color: black;
+  font-weight: 600;
+}
+
+.home-img-paragraph p {
+  margin-top: 0.7rem;
+}
+
+.home-img {
+  width: 7rem;
+  height: 7rem;
 }
 
 /* Home Footer */

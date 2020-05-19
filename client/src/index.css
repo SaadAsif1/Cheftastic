@@ -4,8 +4,11 @@ body {
   font-family: Circular, Arial, sans-serif;
 }
 
-/* UTILS */
+a {
+  color: black;
+}
 
+/* UTILS */
 .title-font {
   font-family: 'Lobster', cursive;
   color: black;
@@ -31,6 +34,11 @@ body {
 .main-btn:hover {
   cursor: pointer;
   background-color: rgb(116, 101, 252);
+}
+
+.main-btn:focus {
+  outline: none;
+  box-shadow: 0 0 5px rgba(83, 64, 255, 0.6);
 }
 
 .main-btn:disabled,

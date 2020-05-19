@@ -14,6 +14,15 @@
 .navbar-title {
   font-size: 1.6rem;
   padding: 1rem;
+  transition: 0s;
+}
+
+.navbar-title:hover {
+  color: black;
+}
+
+.navbar-title:active {
+  color: rgb(109, 109, 109);
 }
 
 .drawer-title {
@@ -44,4 +53,15 @@
 .navbar-menu:focus {
   outline: none;
   box-shadow: 0 0 0 3px rgba(116, 101, 252, 0.5);
+}
+
+.nav-links {
+  color: black;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.nav-links:hover {
+  color: black;
+  text-decoration: underline;
 }

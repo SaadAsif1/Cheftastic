@@ -8,6 +8,7 @@ const {
   activation,
   forgotPassword,
   resetPassword,
+  googleLogin,
 } = require('../controllers/auth');
 
 // Sign Up a User
@@ -24,5 +25,8 @@ router.put('/forgot-password', forgotPassword);
 
 // reset password
 router.put('/reset-password', resetPassword);
+
+// reset password
+router.put('/google-login', googleLogin);
 
 module.exports = router;

@@ -1,11 +1,17 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { Drawer } from 'antd';
-import { YuqueFilled, MenuOutlined, ArrowLeftOutlined } from '@ant-design/icons';
-import { isAuth } from '../../../helpers/auth';
+import { Link, withRouter } from 'react-router-dom';
+import { Drawer, Button } from 'antd';
+import {
+  YuqueFilled,
+  MenuOutlined,
+  ArrowLeftOutlined,
+  LogoutOutlined,
+  UserOutlined,
+} from '@ant-design/icons';
+import { isAuth, signout, getLocalStorage } from '../../../helpers/auth';
 import './Navbar.css';
 
-const Navbar = ({ showArrow, arrowLink }) => {
+const Navbar = ({ showArrow, arrowLink, history }) => {
   const [visible, setVisible] = useState(false);
 
   const showDrawer = () => {
@@ -33,16 +39,18 @@ const Navbar = ({ showArrow, arrowLink }) => {
             <ArrowLeftOutlined />
           </Link>
         </div>
-        <div className='align-center title-font navbar-title'>
+        <Link to='/' className='align-center title-font navbar-title'>
           <YuqueFilled /> Reminders
-        </div>
+        </Link>
         <button className='navbar-menu' onClick={showDrawer}>
           <MenuOutlined />
         </button>
         <Drawer
           title={
-            <div className='align-center title-font letter-spacing-1 drawer-title'>
-              <YuqueFilled /> Reminders
+            <div className='align-center  letter-spacing-1 drawer-title'>
+              <b>
+                <UserOutlined /> {isAuth() ? isAuth().name : getLocalStorage('name')}
+              </b>
             </div>
           }
           placement='right'
@@ -53,11 +61,32 @@ const Navbar = ({ showArrow, arrowLink }) => {
         >
           <div className='align-center'>
             {isAuth() ? (
-              <p>Hi</p>
+              <p>
+                <Button
+                  type='primary'
+                  danger
+                  icon={<LogoutOutlined />}
+                  onClick={() => {
+                    signout(() => {
+                      history.push('/');
+                    });
+                  }}
+                >
+                  Sign Out
+                </Button>
+              </p>
             ) : (
               <div>
-                <p>Sign Up</p>
-                <p>Sign In</p>
+                <p>
+                  <Link className='nav-links' to='/sign-up'>
+                    Sign Up
+                  </Link>
+                </p>
+                <p>
+                  <Link className='nav-links' to='/sign-in'>
+                    Sign In
+                  </Link>
+                </p>
               </div>
             )}
           </div>
@@ -67,4 +96,4 @@ const Navbar = ({ showArrow, arrowLink }) => {
   );
 };
 
-export default Navbar;
+export default withRouter(Navbar);
