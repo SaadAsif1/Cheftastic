@@ -65,7 +65,7 @@ const ForgotPassword = () => {
   };
 
   return (
-    <div>
+    <div style={{ marginTop: '9rem' }}>
       <Navbar showArrow={true} arrowLink='/sign-in' />
       <div style={forgotPasswordStyles}>
         <h1 style={{ textAlign: 'center' }}>Forgot password</h1>

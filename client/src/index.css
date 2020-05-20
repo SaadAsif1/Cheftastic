@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Roboto&family=Poppins:wght@300&display=swap');
 
 body {
-  font-family: Circular, Arial, sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 
 a {
@@ -49,6 +49,10 @@ a {
 
 .container {
   padding: 0 2rem;
+}
+
+.container-top {
+  margin-top: 7rem;
 }
 
 @media (min-width: 1200px) {

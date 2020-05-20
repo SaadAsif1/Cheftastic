@@ -21,7 +21,7 @@ const Home = () => {
   };
 
   return (
-    <div>
+    <div style={{ marginTop: '9rem' }}>
       {isAuth() && <Redirect to='/explore' />}
       <Navbar showArrow={false} arrowLink='/' />
       <div className='container align-center'>
@@ -45,7 +45,10 @@ const Home = () => {
         <div className='home-img-paragraph'>
           <img className='home-img' src={Research} alt='img1' />
           <h2>Your Research</h2>
-          <p>You words can have a big effect others. Make sure to DO YOUR RESEARCH!</p>
+          <p>
+            You words can have a big effect others. Make sure to you are aware of what
+            youre whriteing. DO YOUR RESEARCH!
+          </p>
         </div>
         <div className='home-img-paragraph'>
           <img className='home-img' src={Book} alt='img2' />

@@ -125,7 +125,7 @@ const ResetPassword = ({ match }) => {
   };
 
   return (
-    <div>
+    <div style={{ marginTop: '9rem' }}>
       <Navbar showArrow={true} arrowLink='/sign-in' />
       <div>
         {invalidToken ? <Redirect to='/sign-in' /> : null}

@@ -110,10 +110,10 @@ const Signin = ({ location, history }) => {
   };
 
   return (
-    <div>
+    <div style={{ marginTop: '9rem' }}>
       <Navbar showArrow={true} arrowLink='/' />
       <div style={SignInStyles}>
-        <h1 style={{ textAlign: 'center' }}>Sign In</h1>
+        <h1 className='align-center'>Sign In</h1>
         <Google authGoogle={authGoogle} />
         {signInForm()}
         <div>

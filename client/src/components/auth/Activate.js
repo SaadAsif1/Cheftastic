@@ -81,7 +81,7 @@ const Activate = ({ match }) => {
   );
 
   return (
-    <div>
+    <div style={{ marginTop: '9rem' }}>
       {invalidToken ? <Redirect to='/' /> : null}
       {activation.success ? (
         <Redirect

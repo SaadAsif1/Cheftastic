@@ -7,6 +7,11 @@ const userProfileSchema = mongoose.Schema(
       type: mongoose.Schema.Types.ObjectId,
       ref: 'User',
     },
+    name: {
+      type: String,
+      trim: true,
+      default: '',
+    },
     thumbnail: {
       type: String,
       trim: true,

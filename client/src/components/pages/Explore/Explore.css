@@ -28,3 +28,13 @@
 .article-text-container {
   padding: 2rem;
 } */
+
+.article-container {
+  padding-top: 50px;
+  width: 60%;
+  margin: auto;
+}
+
+.article-body {
+  padding: 25px 0px 50px 0px;
+}

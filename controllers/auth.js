@@ -111,6 +111,7 @@ exports.activation = async (req, res) => {
         // create Random username
         const newProfile = new UserProfile({
           user: result,
+          name,
         });
 
         await newProfile.save();
@@ -307,6 +308,7 @@ exports.googleLogin = async (req, res) => {
     // create Random username
     const newProfile = new UserProfile({
       user: result,
+      name,
     });
 
     await newProfile.save();

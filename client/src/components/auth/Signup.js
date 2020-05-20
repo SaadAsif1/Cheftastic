@@ -112,10 +112,11 @@ const Signup = () => {
   };
 
   return (
-    <div>
+    <div style={{ marginTop: '9rem' }}>
       <Navbar showArrow={true} arrowLink='/sign-in' />
       <div style={formStyles}>
         <h1 className='align-center'>Sign Up</h1>
+
         {signUpForm()}
         <div>
           Already have an account? <Link to='/sign-in'>Sign In</Link> here

@@ -30,15 +30,15 @@ const Contact = () => {
   };
 
   return (
-    <div>
+    <div style={{ marginTop: '6rem' }}>
       <Navbar showArrow={true} arrowLink='/explore' />
       <div className='container'>
         <div className='contact-container'>
           <div className='contact-container-title'>
             <h2>Contact Us</h2>
             <p>
-              Hey Thank you for you intres in contactiong us we will try our best to
-              return back to you with in 24 hours
+              Hey! We are intrested in what you have to say. We will reply within 24 hours
+              of your message.
             </p>
           </div>
           <Form layout='vertical' name='basic' onFinish={onFinish} form={form}>
