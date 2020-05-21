@@ -1,0 +1,122 @@
+/* Home Table */
+.admin-container-body {
+  margin-left: 12rem;
+  padding: 1rem;
+}
+
+.post-table-top {
+  display: flex;
+  justify-content: space-between;
+  margin: 1rem 0;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  overflow: hidden;
+}
+table td,
+table th {
+  border-top: 1px solid #ecf0f1;
+  padding: 10px;
+}
+table td {
+  border-left: 1px solid #ecf0f1;
+  border-right: 1px solid #ecf0f1;
+}
+table th {
+  background-color: #4ecdc4;
+  color: black;
+  letter-spacing: 1px;
+}
+table tr:nth-of-type(even) td {
+  background-color: #d9f4f2;
+}
+table .total th {
+  background-color: white;
+}
+table .total td {
+  text-align: right;
+  font-weight: 700;
+}
+
+/* Dashboard Title */
+.dashboard-tilte-container {
+  text-align: center;
+}
+
+.dashboard-title {
+  display: inline-block;
+  font-size: 2rem;
+  border-bottom: solid 4px rgb(15, 41, 90);
+  color: black;
+}
+
+/* Edit Posts */
+.admin-edit-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.admin-navbar-arrow {
+  font-size: 2rem;
+}
+
+.admin-navbar-edit-title {
+  display: inline-block;
+  font-size: 2rem;
+  border-bottom: solid 4px rgb(15, 41, 90);
+  margin-right: -5rem;
+  color: black;
+}
+
+.admin-navbar-edit-postedAt b {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 800;
+}
+
+.admin-edit-body-container {
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 2rem;
+}
+
+.admin-about-form-title {
+  font-size: 1.3rem;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 800;
+}
+
+.admin-edit-title {
+  font-weight: 600;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Comments */
+.comments-container-edit {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.edit-comments-btn-container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.edit-comments-btn-container button {
+  margin-top: 1rem;
+  width: 100%;
+  padding: 1.2rem 0;
+  background: none;
+  border: solid 1px rgba(150, 132, 0, 1);
+  border-radius: 5px;
+  color: rgba(150, 132, 0, 1);
+  letter-spacing: 1px;
+  transition: 0.2s;
+}
+
+.edit-comments-btn-container button:hover {
+  cursor: pointer;
+}

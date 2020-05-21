@@ -5,14 +5,20 @@ const postSchema = mongoose.Schema(
     title: {
       type: String,
       required: true,
+      trim: true,
     },
     postedBy: {
       type: mongoose.Schema.Types.ObjectId,
       ref: 'User Profile',
     },
+    user: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'User',
+    },
     postText: {
       type: String,
       required: true,
+      trim: true,
     },
     comments: [
       {

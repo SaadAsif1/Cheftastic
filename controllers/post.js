@@ -1,7 +1,9 @@
 const mongoose = require('mongoose');
+const _ = require('lodash');
 const { postValidation, commentValidation } = require('../validators/post');
 const Post = require('../models/Post');
 const UserProfile = require('../models/UserProfile');
+const User = require('../models/User');
 
 // GET SIGNAL POST
 exports.getSingalPost = async (req, res) => {
@@ -10,7 +12,9 @@ exports.getSingalPost = async (req, res) => {
     return res.status(400).json({ error: 'Invalid ObjectId!' });
   }
 
-  const post = await Post.findOne({ _id: req.params.id }).populate('postedBy');
+  const post = await Post.findOne({ _id: req.params.id })
+    .populate('postedBy')
+    .populate('comments.postedBy');
 
   if (!post) return res.status(400).json({ error: 'No post found!' });
 
@@ -31,7 +35,7 @@ exports.getAllAccountPost = async (req, res) => {
     return res.status(400).json({ error: 'Invalid ObjectId!' });
   }
 
-  const posts = await Post.find({ postedBy: req.params.id });
+  const posts = await Post.find({ user: req.params.id });
 
   if (!posts) return res.status(400).json({ error: 'No Account found!' });
 
@@ -41,7 +45,9 @@ exports.getAllAccountPost = async (req, res) => {
 // CREATE A POST
 exports.createPost = async (req, res) => {
   // get logged in user
-  const user = await UserProfile.findOne({ user: req.user._id });
+  const userProfile = await UserProfile.findOne({ user: req.user._id });
+
+  const user = await User.findOne({ _id: req.user._id });
 
   // Validate Incoming body request
   const { error, value } = postValidation(req.body);
@@ -54,7 +60,8 @@ exports.createPost = async (req, res) => {
   const post = new Post({
     title,
     postText,
-    postedBy: user,
+    postedBy: userProfile,
+    user,
   });
 
   const result = await post.save();
@@ -154,4 +161,27 @@ exports.commentPost = async (req, res) => {
   res.json(result);
 };
 
-// exports.deleteComment = async (req, res) => {};
+exports.deleteComment = async (req, res) => {
+  // Check Object ID
+  if (!mongoose.Types.ObjectId.isValid(req.params.id)) {
+    return res.status(400).json({ error: 'Invalid ObjectId!' });
+  }
+
+  // Get post
+  const post = await Post.findOne({ _id: req.params.id });
+
+  // No post found
+  if (!post) return res.status(400).json({ error: 'No Post found!' });
+
+  if (!req.body.commentID) return res.status(400).json({ error: 'Comment ID required!' });
+
+  var newComments = _.remove(post.comments, function (n) {
+    return n._id != req.body.commentID;
+  });
+
+  post.comments = newComments;
+
+  const result = await post.save();
+
+  res.json({ message: 'Succfully deleted comment', result });
+};

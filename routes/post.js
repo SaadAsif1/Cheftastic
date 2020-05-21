@@ -36,6 +36,6 @@ router.delete('/post/:id', requireSignin, deletePost);
 router.post('/post/comment/:id', requireSignin, commentPost);
 
 // Deleting a comment
-// router.delete('/post/comment/:id', requireSignin, deleteComment);
+router.delete('/post/comment/:id', requireSignin, deleteComment);
 
 module.exports = router;

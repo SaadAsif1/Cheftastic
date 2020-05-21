@@ -63,7 +63,7 @@ const Activate = ({ match }) => {
 
   const accountActivation = () => (
     <div style={activationStyles} className='align-center'>
-      <h1>Account Activation: </h1>
+      <h1>Account Activation </h1>
       <hr />
       <div>
         <h3>Hello {name} Please Click the Button Below to Activate your Account</h3>

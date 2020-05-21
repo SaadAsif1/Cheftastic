@@ -8,6 +8,10 @@ a {
   color: black;
 }
 
+button:focus {
+  outline: none;
+}
+
 /* UTILS */
 .title-font {
   font-family: 'Lobster', cursive;
