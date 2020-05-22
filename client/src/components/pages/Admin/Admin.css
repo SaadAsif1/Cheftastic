@@ -23,15 +23,14 @@ table th {
 }
 table td {
   border-left: 1px solid #ecf0f1;
-  border-right: 1px solid #ecf0f1;
+  border-right: 1px solid rgb(211, 211, 211);
 }
 table th {
-  background-color: #4ecdc4;
-  color: black;
+  background-color: rgb(33, 78, 160);
   letter-spacing: 1px;
 }
 table tr:nth-of-type(even) td {
-  background-color: #d9f4f2;
+  background-color: rgb(223, 234, 255);
 }
 table .total th {
   background-color: white;
@@ -89,9 +88,16 @@ table .total td {
   font-weight: 800;
 }
 
-.admin-edit-title {
+.admin-edit-input {
   font-weight: 600;
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.admin-edit-textarea {
+  font-weight: 500;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+    'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  resize: none;
 }
 
 /* Comments */
@@ -119,4 +125,131 @@ table .total td {
 
 .edit-comments-btn-container button:hover {
   cursor: pointer;
+}
+
+.comment-container {
+  border: solid 1px rgb(224, 224, 224);
+  background: white;
+  padding: 1rem;
+  border-radius: 10px;
+  width: 80%;
+  margin: 2rem auto;
+}
+
+.comment-container-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.comment-dec {
+  display: flex;
+  align-items: center;
+}
+
+.commment-container {
+  text-align: left;
+  margin-left: 0.4rem;
+  margin-top: 0.1rem;
+  font-family: 'Roboto', sans-serif;
+}
+
+.commment-name {
+  color: #03a87c;
+}
+
+.commment-date {
+  font-size: 0.8rem;
+}
+
+.commment-name {
+  text-transform: capitalize;
+}
+
+.comment-text {
+  text-align: left;
+  font-family: sans-serif;
+  font-size: 1rem;
+  margin-top: 1rem;
+}
+
+/* Settings */
+
+.settings-container {
+  background-color: #f4f4f4;
+  border-radius: 10px;
+  margin: -1rem;
+}
+
+.card-container {
+  padding: 0 2rem;
+  padding-top: 3rem;
+  padding-bottom: 25rem;
+  border-radius: 10px;
+}
+
+.settings-main-title {
+  font-family: sans-serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: rgb(15, 41, 90);
+}
+
+.setting-email-input {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+    'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-weight: 600;
+}
+
+.settings-sub-title {
+  margin-bottom: 1rem;
+  font-size: 0.8rem;
+}
+
+.setting-form-title {
+  font-family: sans-serif;
+  font-weight: 700;
+  color: rgb(15, 41, 90);
+  font-size: 1rem;
+}
+
+.card-container p {
+  margin: 0;
+}
+.card-container > .ant-tabs-card > .ant-tabs-content {
+  margin-top: -16px;
+}
+[data-theme='compact'] .card-container > .ant-tabs-card > .ant-tabs-content {
+  margin-top: -8px;
+}
+
+[data-theme='compact']
+  .card-container
+  > .ant-tabs-card
+  > .ant-tabs-content
+  > .ant-tabs-tabpane,
+.card-container > .ant-tabs-card > .ant-tabs-content > .ant-tabs-tabpane {
+  background: #fff;
+  padding: 16px;
+}
+
+[data-theme='compact'] .card-container > .ant-tabs-card > .ant-tabs-bar,
+.card-container > .ant-tabs-card > .ant-tabs-bar {
+  border-color: #fff;
+}
+
+[data-theme='compact'] .card-container > .ant-tabs-card > .ant-tabs-bar .ant-tabs-tab,
+.card-container > .ant-tabs-card > .ant-tabs-bar .ant-tabs-tab {
+  border-color: transparent;
+  background: transparent;
+}
+
+[data-theme='compact']
+  .card-container
+  > .ant-tabs-card
+  > .ant-tabs-bar
+  .ant-tabs-tab-active,
+.card-container > .ant-tabs-card > .ant-tabs-bar .ant-tabs-tab-active {
+  border-color: #fff;
+  background: #fff;
 }

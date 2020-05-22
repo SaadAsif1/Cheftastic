@@ -8,7 +8,7 @@ import {
   SettingOutlined,
   ExportOutlined,
 } from '@ant-design/icons';
-import { signout } from '../../../helpers/auth';
+import { signout, isAuth } from '../../../helpers/auth';
 import './AdminNavbar.css';
 
 const AdminNavbar = ({ history, children }) => {
@@ -38,15 +38,16 @@ const AdminNavbar = ({ history, children }) => {
                 backgroundColor: 'rgb(75, 91, 121)',
                 verticalAlign: 'middle',
                 fontSize: '1.5rem',
+                textTransform: 'capitalize',
               }}
               size='large'
               size={54}
             >
-              S
+              {isAuth().name[0]}
             </Avatar>
           </div>
           <div className='admin-navbar-personal-container'>
-            <h2 className='admin-title-navbar'>Saad Asif</h2>
+            <h2 className='admin-title-navbar'>{isAuth().name}</h2>
             <div></div>
           </div>
         </div>

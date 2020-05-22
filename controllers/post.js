@@ -168,7 +168,7 @@ exports.deleteComment = async (req, res) => {
   }
 
   // Get post
-  const post = await Post.findOne({ _id: req.params.id });
+  const post = await Post.findOne({ _id: req.params.id }).populate('comments.postedBy');
 
   // No post found
   if (!post) return res.status(400).json({ error: 'No Post found!' });
@@ -183,5 +183,5 @@ exports.deleteComment = async (req, res) => {
 
   const result = await post.save();
 
-  res.json({ message: 'Succfully deleted comment', result });
+  res.json({ message: 'Succfully deleted comment', comments: result.comments });
 };

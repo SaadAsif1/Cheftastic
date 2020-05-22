@@ -49,7 +49,7 @@ exports.updateAccount = async (req, res) => {
   // not sending back pass and salt to user if update was succesful
   result.hashed_password = undefined;
   result.salt = undefined;
-  res.json({ result });
+  res.json(result);
 };
 
 // Update A User Profile

@@ -22,10 +22,17 @@ const postSchema = mongoose.Schema(
     },
     comments: [
       {
-        commentText: String,
+        commentText: {
+          type: String,
+          trim: true,
+        },
         postedBy: {
           type: mongoose.Schema.Types.ObjectId,
           ref: 'User Profile',
+        },
+        date: {
+          type: String,
+          default: Date.now,
         },
       },
     ],

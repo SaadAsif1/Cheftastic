@@ -1,27 +1,26 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, withRouter } from 'react-router-dom';
-import { Drawer, Button, Menu, Dropdown } from 'antd';
-import {
-  YuqueFilled,
-  MenuOutlined,
-  ArrowLeftOutlined,
-  LogoutOutlined,
-  UserOutlined,
-  DownOutlined,
-} from '@ant-design/icons';
-import { isAuth, signout, getLocalStorage } from '../../../helpers/auth';
+import { Button, Menu, Dropdown, Avatar } from 'antd';
+import axios from 'axios';
+import { YuqueFilled, MenuOutlined, ArrowLeftOutlined } from '@ant-design/icons';
+import { isAuth, signout } from '../../../helpers/auth';
 import './Navbar.css';
 
 const Navbar = ({ showArrow, arrowLink, history }) => {
-  // const [visible, setVisible] = useState(false);
+  const [userProfile, setUserProfile] = useState('');
 
-  // const showDrawer = () => {
-  //   setVisible(true);
-  // };
-
-  // const onClose = () => {
-  //   setVisible(false);
-  // };
+  useEffect(() => {
+    if (isAuth()) {
+      axios
+        .get(`/api/account/${isAuth()._id}`)
+        .then((response) => {
+          setUserProfile(response.data.userProfile);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    }
+  }, []);
 
   const navbarCurrent = (path) => {
     if (history.location.pathname === path) {
@@ -42,7 +41,11 @@ const Navbar = ({ showArrow, arrowLink, history }) => {
     <div className='navbar-main-container'>
       <div className='navbar-container'>
         <div>
-          <Link to={arrowLink} style={arrow().arrow} className='nav-arrow'>
+          <Link
+            to={arrowLink}
+            style={isAuth() ? { display: 'none' } : arrow().arrow}
+            className='nav-arrow'
+          >
             <ArrowLeftOutlined />
           </Link>
         </div>
@@ -54,18 +57,55 @@ const Navbar = ({ showArrow, arrowLink, history }) => {
           <YuqueFilled /> Reminders
         </Link>
         {isAuth() ? (
-          <Button
-            type='primary'
-            danger
-            icon={<LogoutOutlined />}
-            onClick={() => {
-              signout(() => {
-                history.push('/');
-              });
-            }}
+          <Dropdown
+            overlay={
+              <Menu>
+                <Menu.Item style={navbarCurrent('/explore')}>
+                  <Link to='/explore'>Explore</Link>
+                </Menu.Item>
+
+                <Menu.Item style={navbarCurrent('/explore')}>
+                  <Link to='/explore'>Users</Link>
+                </Menu.Item>
+                <Menu.Divider />
+                <Menu.Item style={navbarCurrent('/contact')}>
+                  <Link to='/contact'>Contact</Link>
+                </Menu.Item>
+                <Menu.Divider />
+                <Menu.Item>
+                  <Link to='/admin/home'>Manage Posts</Link>
+                </Menu.Item>
+                <Menu.Item>
+                  <Link to='/admin/settings'>Account Settings</Link>
+                </Menu.Item>
+                <Menu.Divider />
+                <Menu.Item style={navbarCurrent('/sign-in')}>
+                  <span
+                    to='/sign-in'
+                    onClick={() => {
+                      signout(() => {
+                        history.push('/');
+                      });
+                    }}
+                  >
+                    Sign Out
+                  </span>
+                </Menu.Item>
+              </Menu>
+            }
+            // trigger={['click']}
           >
-            Sign Out
-          </Button>
+            <Avatar
+              style={{
+                backgroundColor: userProfile.thumbnail,
+                verticalAlign: 'middle',
+                fontSize: '1rem',
+              }}
+              className='navbar-avatar'
+            >
+              {isAuth().name[0]}
+            </Avatar>
+          </Dropdown>
         ) : (
           <div>
             <Dropdown
@@ -107,57 +147,3 @@ const Navbar = ({ showArrow, arrowLink, history }) => {
 };
 
 export default withRouter(Navbar);
-
-/* <Link className='nav-links-1' to='/sign-in'>
-              Sign In
-            </Link>
-            <Link className='nav-links-2' to='/sign-up'>
-              Sign Up
-            </Link> */
-
-/* <Drawer
-          title={
-            <div className='align-center  letter-spacing-1 drawer-title'>
-              <b>
-                <UserOutlined /> {isAuth() ? isAuth().name : getLocalStorage('name')}
-              </b>
-            </div>
-          }
-          placement='right'
-          closable={false}
-          onClose={onClose}
-          visible={visible}
-          width={300}
-        >
-          <div className='align-center'>
-            {isAuth() ? (
-              <p>
-                <Button
-                  type='primary'
-                  danger
-                  icon={<LogoutOutlined />}
-                  onClick={() => {
-                    signout(() => {
-                      history.push('/');
-                    });
-                  }}
-                >
-                  Sign Out
-                </Button>
-              </p>
-            ) : (
-              <div>
-                <p>
-                  <Link className='nav-links' to='/sign-up'>
-                    Sign Up
-                  </Link>
-                </p>
-                <p>
-                  <Link className='nav-links' to='/sign-in'>
-                    Sign In
-                  </Link>
-                </p>
-              </div>
-            )}
-          </div>
-        </Drawer> */
