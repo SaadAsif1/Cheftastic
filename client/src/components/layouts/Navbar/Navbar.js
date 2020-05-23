@@ -64,8 +64,12 @@ const Navbar = ({ showArrow, arrowLink, history }) => {
                 </Menu.Item>
                 <Menu.Divider />
                 <Menu.Item>
+                  <Link to='/admin/home/add-post'>Add New Posts</Link>
+                </Menu.Item>
+                <Menu.Item>
                   <Link to='/admin/home'>Manage Posts</Link>
                 </Menu.Item>
+                <Menu.Divider />
                 <Menu.Item>
                   <Link to='/admin/settings'>Account Settings</Link>
                 </Menu.Item>
@@ -75,7 +79,7 @@ const Navbar = ({ showArrow, arrowLink, history }) => {
                 </Menu.Item>
                 <Menu.Divider />
                 <Menu.Item>
-                  <span
+                  <div
                     onClick={() => {
                       signout(() => {
                         history.push('/');
@@ -83,7 +87,7 @@ const Navbar = ({ showArrow, arrowLink, history }) => {
                     }}
                   >
                     Sign Out
-                  </span>
+                  </div>
                 </Menu.Item>
               </Menu>
             }

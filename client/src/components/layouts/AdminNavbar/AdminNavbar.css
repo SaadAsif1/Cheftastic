@@ -19,21 +19,6 @@
   font-size: 1.1rem;
 }
 
-.admin-navbar-personal-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.admin-navbar-personal-container div {
-  width: 0.5rem;
-  height: 0.5rem;
-  background-color: rgb(3, 185, 3);
-  margin-left: 0.3rem;
-  border-radius: 50%;
-  margin-top: 0.5rem;
-}
-
 .admin-navbar-title {
   position: absolute;
   left: 0;
@@ -46,6 +31,7 @@
   margin: 0;
   margin-top: 0.3rem;
   text-transform: capitalize;
+  font-size: 1.1rem;
 }
 
 .admin-navbar-links-container {

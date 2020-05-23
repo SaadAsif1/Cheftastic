@@ -12,6 +12,11 @@ const Signin = ({ location, history }) => {
   const [form] = Form.useForm();
 
   useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+
     // Check if the redirect from /auth/activate/:token sent use state
     if (!location.state) return;
 

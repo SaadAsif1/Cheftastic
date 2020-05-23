@@ -1,7 +1,7 @@
 /* Home Table */
 .admin-container-body {
   margin-left: 12rem;
-  padding: 1rem;
+  padding: 1rem 2rem;
 }
 
 .post-table-top {
@@ -14,7 +14,7 @@ table {
   width: 100%;
   border-collapse: collapse;
   text-align: left;
-  overflow: hidden;
+  overflow-x: auto;
 }
 table td,
 table th {
@@ -107,7 +107,7 @@ table .total td {
 }
 
 .edit-comments-btn-container {
-  width: 80%;
+  width: 100%;
   margin: 0 auto;
 }
 
@@ -128,12 +128,13 @@ table .total td {
 }
 
 .comment-container {
-  border: solid 1px rgb(224, 224, 224);
   background: white;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+  border: 1px solid rgba(0, 0, 0, 0.1);
   padding: 1rem;
   border-radius: 10px;
-  width: 80%;
-  margin: 2rem auto;
+  width: 100%;
+  margin-bottom: 2rem;
 }
 
 .comment-container-head {
@@ -152,11 +153,13 @@ table .total td {
   margin-left: 0.4rem;
   margin-top: 0.1rem;
   font-family: 'Roboto', sans-serif;
+  font-size: 0.8rem;
+  line-height: 1rem;
 }
 
-.commment-name {
-  color: #03a87c;
-}
+/* .commment-name { */
+/* color: #000; */
+/* } */
 
 .commment-date {
   font-size: 0.8rem;
@@ -170,6 +173,7 @@ table .total td {
   text-align: left;
   font-family: sans-serif;
   font-size: 1rem;
+  margin: 0 2rem;
   margin-top: 1rem;
 }
 
@@ -178,7 +182,7 @@ table .total td {
 .settings-container {
   background-color: #f4f4f4;
   border-radius: 10px;
-  margin: -1rem;
+  margin: -1rem -2rem;
 }
 
 .card-container {

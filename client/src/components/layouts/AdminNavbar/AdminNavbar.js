@@ -46,10 +46,8 @@ const AdminNavbar = ({ history, children }) => {
               {isAuth().name[0]}
             </Avatar>
           </div>
-          <div className='admin-navbar-personal-container'>
-            <h2 className='admin-title-navbar'>{isAuth().name}</h2>
-            <div></div>
-          </div>
+
+          <h2 className='admin-title-navbar'>{isAuth().name}</h2>
         </div>
 
         <div className='admin-navbar-links-container'>

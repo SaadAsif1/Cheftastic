@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Typography, Avatar, Button, Skeleton } from 'antd';
+import { Typography, Avatar, Button, Skeleton, BackTop } from 'antd';
 import { ArrowRightOutlined } from '@ant-design/icons';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
@@ -36,9 +36,13 @@ const Explore = () => {
     });
   };
 
+  // Back to top styles
+
   return (
     <div className='explore-container'>
-      <Navbar showArrow={true} arrowLink='/' />
+      <Navbar showArrow={isAuth() ? false : true} arrowLink='/' />
+
+      <BackTop />
 
       <div className='container'>
         <div className='explore-title-container'>

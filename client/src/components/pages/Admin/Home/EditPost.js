@@ -189,7 +189,6 @@ const EditPost = ({ history }) => {
                     commentVisable
                       ? {
                           display: 'block',
-                          background: '#f8f8f8',
                           padding: '0.5rem 1.5rem',
                           marginTop: '2rem',
                           borderRadius: '10px',
@@ -203,9 +202,9 @@ const EditPost = ({ history }) => {
                         <div className='comment-dec'>
                           <Avatar
                             style={{
-                              backgroundColor: comment.thumbnail,
+                              backgroundColor: comment.postedBy.thumbnail,
                               verticalAlign: 'middle',
-                              fontSize: '1.5rem',
+                              fontSize: '1.1rem',
                             }}
                             size='large'
                           >
