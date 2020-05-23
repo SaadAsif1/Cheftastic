@@ -81,7 +81,7 @@ const PostTable = () => {
               style={{ background: '#03a87c', border: 'none' }}
               danger
             >
-              Add New Posts
+              Add New Reminder
             </Button>
           </Link>
         </div>
@@ -89,7 +89,7 @@ const PostTable = () => {
           type='text'
           onChange={(e) => setSearch(e.target.value)}
           value={search}
-          placeholder='Search Posts Tilte'
+          placeholder='Search Reminders Title'
           prefix={<SearchOutlined />}
           style={{ width: '20rem' }}
         />
@@ -97,7 +97,7 @@ const PostTable = () => {
       <table>
         <thead style={{ background: '#4E5964', color: '#f4f4f4' }}>
           <tr>
-            <th className='align-center'>Post Title</th>
+            <th className='align-center'>Reminder Title</th>
             <th className='align-center'>Comments</th>
             <th className='align-center'>Date Posted</th>
             <th className='align-center'>Edit</th>
@@ -107,7 +107,7 @@ const PostTable = () => {
         <tbody>
           {filteredPosts ? (
             filteredPosts.length === 0 ? (
-              <h2 className='align-center'> No posts</h2>
+              <h2 className='align-center'>No Reminders</h2>
             ) : (
               filteredPosts.map((post) => (
                 <tr key={post._id}>

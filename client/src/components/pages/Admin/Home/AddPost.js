@@ -69,7 +69,7 @@ const AddPost = () => {
           </Link>
         </div>
         <div style={{ marginRight: 0 }} className='admin-navbar-edit-title'>
-          Add New Posts
+          Add New Reminders
         </div>
         <div></div>
       </div>
@@ -93,7 +93,7 @@ const AddPost = () => {
           {/* Post Body */}
           <Form.Item
             name='postText'
-            label={<div className='admin-about-form-title'>Post Body</div>}
+            label={<div className='admin-about-form-title'>Reminder Body</div>}
             rules={[
               {
                 required: true,

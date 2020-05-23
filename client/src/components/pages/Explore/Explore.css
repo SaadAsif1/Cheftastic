@@ -1,40 +1,80 @@
-.categories-container {
+.explore-container {
+  background-color: #fafafa;
+  padding-top: 5rem;
+  padding-bottom: 2rem;
+}
+
+.explore-title-container {
   text-align: center;
-  margin-top: 2rem;
-  border-radius: 20px;
 }
 
-/* Article */
-/* .article-container {
-  display: flex;
-  background-color: rgb(255, 255, 255);
-  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
-  margin: 2rem 0;
+.explore-title {
+  display: inline-block;
+  text-align: center;
+  font-size: 2rem;
+  margin-top: 1.5rem;
+  border-bottom: solid 4px rgb(15, 41, 90);
+  color: black;
 }
 
-.article-img {
-  width: 20rem;
-  height: 100%;
+/* Post */
+.post-container {
+  width: 70%;
+  margin: 2rem auto;
+  background-color: white;
+  padding: 1rem 2rem;
+  border-radius: 5px;
+  /* border: solid 1px rgb(189, 189, 189); */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  /* box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23); */
 }
 
-.article-head-container {
+.post-title {
+  font-size: 1.2rem;
+  color: rgb(41, 41, 41);
+  font-family: sans-serif;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin-bottom: 0.6rem;
+  text-transform: capitalize;
+}
+
+.post-passage {
+  margin-bottom: 1rem;
+  font-size: 0.8rem;
+  letter-spacing: 0.8px;
+}
+
+.post-read-more {
+  font-style: 1rem;
+}
+
+.post-info-bottom {
+  border-top: solid 1px rgb(221, 221, 221);
+  padding-top: 1rem;
+}
+
+.post-info-bottom {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: solid 2px grey;
-  margin-bottom: 1rem;
+  margin-bottom: 0.4rem;
 }
 
-.article-text-container {
-  padding: 2rem;
-} */
-
-.article-container {
-  padding-top: 50px;
-  width: 60%;
-  margin: auto;
+.post-thumbnail {
+  display: flex;
+  align-items: center;
 }
 
-.article-body {
-  padding: 25px 0px 50px 0px;
+.post-thumbnail-container {
+  margin-left: 0.4rem;
+  font-size: 0.7rem;
+  letter-spacing: 1px;
+  line-height: 1rem;
+}
+
+.post-name {
+  text-transform: capitalize;
+  color: black;
 }

@@ -10,6 +10,11 @@ const PersonalInfo = () => {
   const [form] = Form.useForm();
 
   useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+
     // Set form values
     form.setFieldsValue({
       name: isAuth().name,

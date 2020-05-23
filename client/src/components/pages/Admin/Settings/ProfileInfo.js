@@ -12,6 +12,11 @@ const ProfileInfo = () => {
   const [form] = Form.useForm();
 
   useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+
     axios
       .get(`/api/account/${isAuth()._id}`)
       .then((response) => {
@@ -54,7 +59,7 @@ const ProfileInfo = () => {
         setButtonText('Update');
       })
       .catch((error) => {
-        console.log("Error from 'ProfileInfo!");
+        notification.error({ message: error.response.data.error });
         setButtonText('Update');
       });
   };
@@ -79,7 +84,7 @@ const ProfileInfo = () => {
           <Option value='#9254de'>Purple</Option>
           <Option value='#c41d7f'>Pink</Option>
           <Option value='#efdbff'>Light Purple</Option>
-          <Option value='#8c8c8c'>Grey</Option>
+          <Option value='rgb(75, 91, 121)'>Grey</Option>
           <Option value='#096dd9'>Light Blue</Option>
           <Option value='#061178'>Navy Blue</Option>
         </Select>

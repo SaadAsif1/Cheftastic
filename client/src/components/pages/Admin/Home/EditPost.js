@@ -135,7 +135,7 @@ const EditPost = ({ history }) => {
                 <ArrowLeftOutlined />
               </Link>
             </div>
-            <div className='admin-navbar-edit-title'>Edit Posts</div>
+            <div className='admin-navbar-edit-title'>Edit Reminders</div>
             <div className='admin-navbar-edit-postedAt'>
               <b>Post At: </b> {formatDate(postData.createdAt)}
               <br />
@@ -155,7 +155,7 @@ const EditPost = ({ history }) => {
               {/* Post Body */}
               <Form.Item
                 name='postText'
-                label={<div className='admin-about-form-title'>Post Body</div>}
+                label={<div className='admin-about-form-title'>Reminder Body</div>}
               >
                 <Input.TextArea className='admin-edit-textarea' rows='15' />
               </Form.Item>

@@ -41,11 +41,7 @@ const Navbar = ({ showArrow, arrowLink, history }) => {
     <div className='navbar-main-container'>
       <div className='navbar-container'>
         <div>
-          <Link
-            to={arrowLink}
-            style={isAuth() ? { display: 'none' } : arrow().arrow}
-            className='nav-arrow'
-          >
+          <Link to={arrowLink} style={arrow().arrow} className='nav-arrow'>
             <ArrowLeftOutlined />
           </Link>
         </div>
@@ -63,13 +59,8 @@ const Navbar = ({ showArrow, arrowLink, history }) => {
                 <Menu.Item style={navbarCurrent('/explore')}>
                   <Link to='/explore'>Explore</Link>
                 </Menu.Item>
-
                 <Menu.Item style={navbarCurrent('/explore')}>
                   <Link to='/explore'>Users</Link>
-                </Menu.Item>
-                <Menu.Divider />
-                <Menu.Item style={navbarCurrent('/contact')}>
-                  <Link to='/contact'>Contact</Link>
                 </Menu.Item>
                 <Menu.Divider />
                 <Menu.Item>
@@ -79,9 +70,12 @@ const Navbar = ({ showArrow, arrowLink, history }) => {
                   <Link to='/admin/settings'>Account Settings</Link>
                 </Menu.Item>
                 <Menu.Divider />
-                <Menu.Item style={navbarCurrent('/sign-in')}>
+                <Menu.Item style={navbarCurrent('/contact')}>
+                  <Link to='/contact'>Contact</Link>
+                </Menu.Item>
+                <Menu.Divider />
+                <Menu.Item>
                   <span
-                    to='/sign-in'
                     onClick={() => {
                       signout(() => {
                         history.push('/');

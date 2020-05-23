@@ -15,7 +15,7 @@ const userProfileSchema = mongoose.Schema(
     thumbnail: {
       type: String,
       trim: true,
-      default: 'rgb(15, 41, 90)',
+      default: 'rgb(75, 91, 121)',
     },
     website: {
       type: String,

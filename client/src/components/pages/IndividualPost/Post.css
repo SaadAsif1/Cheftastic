@@ -1,0 +1,130 @@
+.post-individual-wrapper {
+  background: #fafafa;
+  padding-top: 8rem;
+  padding-bottom: 20rem;
+}
+
+.post-individual-container {
+  margin: 0 auto;
+  width: 70%;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  padding: 1rem 2rem;
+  border-radius: 5px;
+  padding-bottom: 3rem;
+  background-color: white;
+}
+
+.post-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.post-postedBy {
+  text-transform: capitalize;
+  letter-spacing: 1px;
+}
+
+.post-individual-title {
+  font-size: 2.3rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.post-body {
+  letter-spacing: 1px;
+  line-height: 1.5rem;
+}
+
+.post-body::first-letter {
+  font-size: 2rem;
+  font-family: cursive;
+  color: #333;
+  font-weight: 900;
+  text-transform: capitalize;
+}
+
+/* Comments Button */
+.comment-individual-btn-container {
+  text-align: center;
+}
+
+.comment-individual-btn {
+  width: 90%;
+  margin-top: 3rem;
+  padding: 1rem 0;
+  background: none;
+  border: solid 1px rgba(150, 132, 0, 1);
+  border-radius: 5px;
+  color: rgba(150, 132, 0, 1);
+  letter-spacing: 1px;
+  transition: 0.2s;
+}
+
+.comment-individual-btn:hover {
+  cursor: pointer;
+}
+
+/* Actual Comments  */
+
+.comment-individual-container {
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 3rem;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  border-radius: 5px;
+}
+
+.comment-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  letter-spacing: 1px;
+  font-size: 0.8rem;
+}
+
+.comment-avatar-container {
+  display: flex;
+  align-items: center;
+  text-transform: capitalize;
+}
+
+.comment-head-postedBy {
+  margin-left: 0.3rem;
+}
+
+.comment-body {
+  margin-top: 1rem;
+  padding: 0 1rem;
+  letter-spacing: 1px;
+}
+
+/* Comment Button */
+.write-comment-btn {
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 3rem;
+  font-family: sans-serif;
+  color: rgba(0, 0, 0, 0.55);
+  padding: 1rem;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  letter-spacing: 1px;
+  font-size: 1.1rem;
+  font-weight: 100;
+}
+
+.write-comment-btn div:hover {
+  color: rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+}
+
+.write-commnet-icon {
+  margin-right: 0.7rem;
+  font-size: 1.5rem;
+}

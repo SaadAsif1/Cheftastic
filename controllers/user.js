@@ -40,7 +40,7 @@ exports.updateAccount = async (req, res) => {
   user.name = name;
   user.password = password;
 
-  userProfile.name = name;
+  userProfile.name = user.name;
 
   const result = await user.save();
 

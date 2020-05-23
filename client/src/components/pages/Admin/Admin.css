@@ -18,12 +18,12 @@ table {
 }
 table td,
 table th {
-  border-top: 1px solid #ecf0f1;
+  /* border-top: 1px solid #ecf0f1; */
   padding: 10px;
 }
 table td {
-  border-left: 1px solid #ecf0f1;
-  border-right: 1px solid rgb(211, 211, 211);
+  /* border-left: 1px solid #ecf0f1; */
+  border-bottom: solid 1px #ecf0f1;
 }
 table th {
   background-color: rgb(33, 78, 160);

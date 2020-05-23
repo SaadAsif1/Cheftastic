@@ -23,7 +23,7 @@ exports.getSingalPost = async (req, res) => {
 
 // GET ALL POSTS
 exports.getAllPost = async (req, res) => {
-  const posts = await Post.find({}).populate('postedBy');
+  const posts = await Post.find({}).populate('postedBy').sort('-createdAt');
 
   res.json({ posts });
 };

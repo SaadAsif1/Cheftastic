@@ -18,7 +18,7 @@ const Home = ({ location }) => {
   return (
     <AdminNavbar>
       <div className='dashboard-tilte-container'>
-        <h1 className='dashboard-title'>Your Posts</h1>
+        <h1 className='dashboard-title'>Your Reminders</h1>
       </div>
       <PostTable />
     </AdminNavbar>
