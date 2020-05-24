@@ -7,6 +7,8 @@ import PrivateRoute from './PrivateRoute';
 import Home from './components/pages/Home/Home';
 import Explore from './components/pages/Explore/Explore';
 import IndividualPost from './components/pages/IndividualPost/Post';
+import AllAccounts from './components/pages/Accounts/All-Accounts/AllAccounts';
+import SingalAccount from './components/pages/Accounts/Singal-Account/SingalAccount';
 import Contact from './components/pages/Contact/Contact';
 
 // Authentication Routes
@@ -21,6 +23,7 @@ import AdminHome from './components/pages/Admin/Home/Home';
 import AdminSettings from './components/pages/Admin/Settings/Settings';
 import AddPost from './components/pages/Admin/Home/AddPost';
 import EditPost from './components/pages/Admin/Home/EditPost';
+import Post from './components/pages/IndividualPost/Post';
 
 const App = () => {
   return (
@@ -28,6 +31,8 @@ const App = () => {
       <Switch>
         <Route exact path='/' component={Home} />
         <Route exact path='/explore' component={Explore} />
+        <Route path='/account' component={SingalAccount} />
+        <Route exact path='/accounts' component={AllAccounts} />
         <Route path='/post' component={IndividualPost} />
         <Route exact path='/contact' component={Contact} />
 

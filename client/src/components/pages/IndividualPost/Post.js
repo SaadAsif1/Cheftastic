@@ -41,7 +41,7 @@ const Post = ({ history }) => {
         setPost(response.data.post);
       })
       .catch((error) => {
-        console.log(error);
+        history.push('/explore');
       });
   }, []);
 

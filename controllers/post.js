@@ -35,7 +35,7 @@ exports.getAllAccountPost = async (req, res) => {
     return res.status(400).json({ error: 'Invalid ObjectId!' });
   }
 
-  const posts = await Post.find({ user: req.params.id });
+  const posts = await Post.find({ user: req.params.id }).populate('postedBy');
 
   if (!posts) return res.status(400).json({ error: 'No Account found!' });
 

@@ -87,20 +87,18 @@ const Home = ({ history }) => {
           </Bounce>
         </div>
 
-        <Bounce bottom>
-          <div className='home-footer'>
-            <Link disabled={name ? false : true} to='/explore'>
-              <button
-                className='main-btn'
-                onClick={handleClick}
-                disabled={name.length > 2 ? false : true}
-                style={{ padding: '0.8rem 2rem', fontSize: '1rem' }}
-              >
-                Continue
-              </button>
-            </Link>
-          </div>
-        </Bounce>
+        <div className='home-footer'>
+          <Link disabled={name ? false : true} to='/explore'>
+            <button
+              className='main-btn'
+              onClick={handleClick}
+              disabled={name.length > 2 ? false : true}
+              style={{ padding: '0.8rem 2rem', fontSize: '1rem' }}
+            >
+              Continue
+            </button>
+          </Link>
+        </div>
       </div>
     </div>
   );

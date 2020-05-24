@@ -31,9 +31,9 @@ const Navbar = ({ showArrow, arrowLink, history }) => {
   // Shows arrow
   const arrow = () => {
     if (showArrow) {
-      return { title: { marginRight: '-1.5rem' }, arrow: { display: 'block' } };
+      return { title: { marginRight: '-1rem' }, arrow: { display: 'block' } };
     } else {
-      return { title: { marginRight: '-3rem' }, arrow: { display: 'none' } };
+      return { title: { marginRight: '-1rem' }, arrow: { display: 'none' } };
     }
   };
 
@@ -59,8 +59,8 @@ const Navbar = ({ showArrow, arrowLink, history }) => {
                 <Menu.Item style={navbarCurrent('/explore')}>
                   <Link to='/explore'>Explore</Link>
                 </Menu.Item>
-                <Menu.Item style={navbarCurrent('/explore')}>
-                  <Link to='/explore'>Users</Link>
+                <Menu.Item style={navbarCurrent('/accounts')}>
+                  <Link to='/accounts'>User Accounts</Link>
                 </Menu.Item>
                 <Menu.Divider />
                 <Menu.Item>
@@ -111,6 +111,10 @@ const Navbar = ({ showArrow, arrowLink, history }) => {
                 <Menu>
                   <Menu.Item style={navbarCurrent('/explore')}>
                     <Link to='/explore'>Explore</Link>
+                  </Menu.Item>
+                  <Menu.Divider />
+                  <Menu.Item style={navbarCurrent('/accounts')}>
+                    <Link to='/accounts'>User Accounts</Link>
                   </Menu.Item>
                   <Menu.Divider />
                   <Menu.Item style={navbarCurrent('/contact')}>

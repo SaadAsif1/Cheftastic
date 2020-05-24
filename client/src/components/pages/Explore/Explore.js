@@ -36,8 +36,6 @@ const Explore = () => {
     });
   };
 
-  // Back to top styles
-
   return (
     <div className='explore-container'>
       <Navbar showArrow={isAuth() ? false : true} arrowLink='/' />
